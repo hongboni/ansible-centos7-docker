@@ -1,0 +1,22 @@
+---
+# Usage: ansible-playbook -i hosts site.yml
+#
+# This Playbook would deploy the docker swarm cluster with managers and workers.
+
+- hosts: all
+  roles:
+  - role: c7.common
+  - role: docker
+
+- hosts: docker_manager_main
+  roles:
+  - role: manager_main
+
+- hosts: docker_managers
+  roles:
+  - role: manager
+
+- hosts: docker_workers
+  roles:
+  - role: worker
+

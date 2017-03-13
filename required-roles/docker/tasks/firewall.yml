@@ -1,0 +1,22 @@
+---
+- name: Install firewalld
+  yum: name=firewalld state=installed
+   
+- name: Start firewalld
+  service: name=firewalld state=started enabled=yes
+
+#- name: Ensure eth0 on Public Zone
+#  firewalld: zone=public interface=eth0 permanent=true state=enabled
+
+- name: insert firewalld rule for docker swarm
+  firewalld: port={{ item }} permanent=true state=enabled immediate=yes
+  with_items:
+   - 2377/tcp
+   - 7946/tcp
+   - 4789/tcp
+   - 7946/udp
+   - 4789/udp
+
+#- name: Reload firewall rules  
+#  shell: firewall-cmd --reload
+

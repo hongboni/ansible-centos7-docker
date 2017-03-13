@@ -1,0 +1,13 @@
+#The site wide list of docker swarm servers
+
+[docker_manager_main]
+docker_host1 ansible_host=192.168.1.110 ansible_user=centos ansible_become=true
+
+[docker_managers]
+docker_host2 ansible_host=192.168.1.120 ansible_user=centos ansible_become=true
+
+[docker_workers]
+docker_host3 ansible_host=192.168.1.130 ansible_user=centos ansible_become=true
+
+
+

@@ -1,0 +1,16 @@
+---
+# This playbook will join Host with Docker Swarm as backup Manager
+
+- name: Get Docker Manager Token
+  set_fact: swarm_manager_token='{{ hostvars[main_manager_host]['swarm_manager_token'] }}'
+
+- name: Get Main Docker Manager IP
+  set_fact: main_manager_ip='{{ hostvars[main_manager_host]['ansible_host'] }}'
+
+- name: Check if this docker host is in Swarm Node
+  stat: path=/var/lib/docker/swarm/state.json
+  register: swarm_stat 
+
+- name: Join Docker Swarm as Manager if not already
+  shell: docker swarm join --advertise-addr {{ ansible_host }} --token {{ swarm_manager_token }} {{ main_manager_ip }}:2377
+  when: swarm_stat.stat.exists == false  

@@ -1,0 +1,4 @@
+---
+- include: firewall.yml
+- include: selinux.yml
+- include: docker.yml

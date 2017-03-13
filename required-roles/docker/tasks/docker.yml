@@ -1,0 +1,10 @@
+---
+- name: Copy the Docker repository definition
+  copy: src=docker.repo dest=/etc/yum.repos.d/docker.repo
+  
+- name: Install Docker-Engine
+  yum: name=docker-engine state=present
+
+- name: Start Docker Service
+  service: name=docker state=started enabled=yes
+  
