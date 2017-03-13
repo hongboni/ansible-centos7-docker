@@ -1,0 +1,4 @@
+- name: c7.common
+  src: https://github.com/hongboni/ansible-centos7-common.git
+
+
