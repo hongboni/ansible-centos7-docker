@@ -1,18 +1,18 @@
 #The site wide list of docker swarm servers
 
 [docker_manager_main]
-docker_man1 ansible_host=192.168.1.110 ansible_user=centos ansible_become=true
+docker_man1 ansible_host=192.168.1.110 ansible_user=root ansible_become=true
 
 [docker_managers]
-docker_man2 ansible_host=192.168.1.120 ansible_user=centos ansible_become=true
-#docker_man3 ansible_host=192.168.1.121 ansible_user=centos ansible_become=true
+docker_man2 ansible_host=192.168.1.120 ansible_user=root ansible_become=true
+#docker_man3 ansible_host=192.168.1.121 ansible_user=root ansible_become=true
 
 [docker_workers]
-docker_worker1 ansible_host=192.168.1.130 ansible_user=centos ansible_become=true
-#docker_worker2 ansible_host=192.168.1.132 ansible_user=centos ansible_become=true
-#docker_worker3 ansible_host=192.168.1.133 ansible_user=centos ansible_become=true
-#docker_worker4 ansible_host=192.168.1.134 ansible_user=centos ansible_become=true
-#docker_worker5 ansible_host=192.168.1.135 ansible_user=centos ansible_become=true
+docker_worker1 ansible_host=192.168.1.130 ansible_user=root ansible_become=true
+#docker_worker2 ansible_host=192.168.1.132 ansible_user=root ansible_become=true
+#docker_worker3 ansible_host=192.168.1.133 ansible_user=root ansible_become=true
+#docker_worker4 ansible_host=192.168.1.134 ansible_user=root ansible_become=true
+#docker_worker5 ansible_host=192.168.1.135 ansible_user=root ansible_become=true
 
 
 
